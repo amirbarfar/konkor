@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+model Quiz {
+  id Int @id @default(autoincrement())
+
+  quizId String @unique @default(uuid())
+
+  fieldOfStudy String?
+  data Json
+
+  createdAt DateTime @default(now())
+  expiresAt DateTime?
+
+  attempts QuizAttempt[]
+}
+
+model QuizAttempt {
+  id Int @id @default(autoincrement())
+
+  quizId String
+  sessionId String
+
+  answers Json
+  score Float
+
+  createdAt DateTime @default(now())
+
+  quiz Quiz @relation(fields: [quizId], references: [quizId])
+}
+
+model InitialAnswer {
+  id Int @id @default(autoincrement())
+
+  sessionId String @unique
+
+  answers Json
+
+  createdAt DateTime @default(now())
+}
