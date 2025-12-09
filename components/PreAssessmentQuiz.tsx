@@ -118,7 +118,7 @@ export default function PreAssessmentQuiz() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="flex flex-col items-center p-8 bg-white rounded-3xl shadow-2xl"
+          className="flex flex-col items-center p-8 bg-white rounded-3xl shadow-2xl max-w-md w-full"
         >
           <motion.div
             animate={{ rotate: 360 }}
