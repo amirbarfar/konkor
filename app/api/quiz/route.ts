@@ -94,7 +94,7 @@ export const POST = async (request: NextRequest) => {
                     select: { score: true },
                 });
                 if (previousAttempts.length > 0) {
-                    const avgScore = previousAttempts.reduce((sum, a) => sum + a.score, 0) / previousAttempts.length;
+                    const avgScore = previousAttempts.reduce((sum: number, a: {score: number}) => sum + a.score, 0) / previousAttempts.length;
                     if (avgScore < 40 && currentIndex > 0) {
                         level = levels[currentIndex - 1];
                     } else if (avgScore > 80 && currentIndex < levels.length - 1) {
