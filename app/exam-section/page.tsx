@@ -233,10 +233,11 @@ export default function ExamSection() {
   };
 
   const resetQuiz = () => {
-    setIndex(0); 
-    setAnswers({}); 
+    setIndex(0);
+    setAnswers({});
     setShowResults(false);
-    fetchQuizData(); 
+    setSubmitted(false);
+    fetchQuizData();
   }
 
   return (
