@@ -1,22 +1,21 @@
 generator client {
   provider = "prisma-client"
-  output   = "../app/generated/prisma/client"
+  output   = "./generated/client"
 }
 
 datasource db {
   provider = "postgresql"
 }
 
-  
 model Quiz {
   id Int @id @default(autoincrement())
 
   quizId String @unique @default(uuid())
 
   fieldOfStudy String?
-  data Json
+  data         Json
 
-  createdAt DateTime @default(now())
+  createdAt DateTime  @default(now())
   expiresAt DateTime?
 
   attempts QuizAttempt[]
@@ -25,11 +24,11 @@ model Quiz {
 model QuizAttempt {
   id Int @id @default(autoincrement())
 
-  quizId String
+  quizId    String
   sessionId String
 
   answers Json
-  score Float
+  score   Float
 
   createdAt DateTime @default(now())
 
