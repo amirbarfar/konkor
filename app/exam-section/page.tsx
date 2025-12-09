@@ -19,9 +19,12 @@ interface QuizResponse {
 
 export default function ExamSection() {
    const router = useRouter();
-   const [quizId, setQuizId] = useState(localStorage.getItem('exam-id'));
-
-  const [questions, setQuestions] = useState<QuizQuestion[]>([]);
+   const [quizId, setQuizId] = useState<string | null>(null);
+   useEffect(() => {
+     setQuizId(localStorage.getItem('exam-id'));
+   }, []);
+ 
+   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [quizTitle, setQuizTitle] = useState("آزمون شبیه‌ساز کنکور");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
