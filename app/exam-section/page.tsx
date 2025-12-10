@@ -300,8 +300,8 @@ export default function ExamSection() {
                 disabled={!selected}
                 className="flex items-center gap-2 px-8 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 text-lg"
               >
-                {index === questions.length - 1 ? "پایان آزمون" : "بعدی"}
                 <ChevronRight className="w-5 h-5" />
+                {index === questions.length - 1 ? "پایان آزمون" : "بعدی"}
               </button>
 
               <button
@@ -309,8 +309,8 @@ export default function ExamSection() {
                 onClick={() => setIndex(index - 1)}
                 className="flex items-center gap-2 px-8 py-3 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 text-lg"
               >
-                <ChevronLeft className="w-5 h-5" />
                 قبلی
+                <ChevronLeft className="w-5 h-5" />
               </button>
             </div>
           </>
