@@ -204,8 +204,8 @@ export default function PreAssessmentQuiz() {
           disabled={!selectedAnswers[currentQuestionIndex] || loading}
           className="px-8 py-3 rounded-2xl bg-linear-to-r from-green-500 to-teal-500 text-white disabled:opacity-40 disabled:cursor-not-allowed hover:from-green-600 hover:to-teal-600 shadow-md transition-all duration-200 font-semibold flex items-center gap-2"
         >
-          {currentQuestionIndex === questions.length - 1 ? "پایان و ساخت آزمون" : "بعدی"}
           <ChevronRight className="w-4 h-4" />
+          {currentQuestionIndex === questions.length - 1 ? "پایان و ساخت آزمون" : "بعدی"}
         </motion.button>
 
         <motion.button
@@ -215,8 +215,8 @@ export default function PreAssessmentQuiz() {
           disabled={currentQuestionIndex === 0 || loading}
           className="px-6 py-3 rounded-2xl bg-green-100 text-green-700 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-green-200 shadow-md transition-all duration-200 font-medium flex items-center gap-2"
         >
-          <ChevronLeft className="w-4 h-4" />
           قبلی
+          <ChevronLeft className="w-4 h-4" />
         </motion.button>
       </motion.div>
     </div>
